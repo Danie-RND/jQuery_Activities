@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of Integers</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script>
+	$("document").ready(function(){
+		$("#inputCard").hide();
+		$("#titleCard").fadeOut("7000");
+		$("#inputCard").show("8000");
+	
+		$("#submit").click(function(){
+			var num = $("#txtnum").val();
+			var temp = 0;
+			for(ctr=0;ctr<=parseInt(num);ctr++){
+				temp = ctr+ temp; 
+			}
+			alert(temp); 
+		});
+	});
+
+
+</script>
+</head>
+<body>
+
+<div id="titleCard" style="border: 1px solid black; width: 300px;height: 100px;">
+	<p style="text-align: center; padding-top: 20px;">Sum of Integers from 1 to N:</p>
+</div>
+<div id="inputCard" style="border: 1px solid black; width: 300px;height: 100px;">
+<br>
+Input a Number: <input type="text" id="txtnum">
+<br>
+<button type="button" id="submit">Ok</button>
+</div>
+
+</body>
+</html>
