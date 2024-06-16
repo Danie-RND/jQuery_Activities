@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Password Activity</title>
+	<script src="../jquery-3.3.1.js"></script>
+
+<script>
+	var mypass = 'qwerty';
+
+	$(document).ready(function(){
+		$("#close").click(function(){
+			$("#divCongrats").hide(); 
+		});
+
+		$("#divCongrats").hide();
+		$("#sorrySpan").hide();
+		$("button").click(function(){
+			$("#divCongrats").hide();
+			$("#sorrySpan").hide();
+			if ($("#txtpass").val()!== mypass){
+				$("#sorrySpan").fadeIn(2000);
+				$("#divCongrats").hide();
+			}
+			else {
+				$("#sorrySpan").hide();
+				$("#divCongrats").slideDown(2000);
+			}
+		});
+		
+	});
+</script>
+</head>
+<body>
+Enter password: <input type="text" id="txtpass">
+<button type="button">Ok</button>
+<span id="sorrySpan" style="border: 1px solid black; padding:10px 10px;">Sorry!</span>
+<br>
+<br>
+<div id="divCongrats" style="border-color:black;border:1px solid black;width: 250px; height: 250px;background-color: pink;"><p id="close" style="text-align: right;padding-right: 10px;">X</p>
+<br>
+<p style="padding-left: 60px;padding-top: 15px;">Congratulations!</p>
+</div>
+</body>
+</html>
